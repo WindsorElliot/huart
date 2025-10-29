@@ -1,5 +1,5 @@
-import 'package:hue_api/src/data/data_source/bridge_seeker_data_source.dart';
-import 'package:hue_api/src/domain/model/discovered_bridge.br.dart';
+import 'package:hue_api/src/data/data_source/seeker/bridge_seeker_data_source.dart';
+import 'package:hue_api/src/domain/model/seeker/discovered_bridge.br.dart';
 import 'package:hue_api/src/domain/repository/bridge_seeker_repository.dart';
 
 class BridgeSeekerSingleSourceRepository implements BridgeSeekerRepository {

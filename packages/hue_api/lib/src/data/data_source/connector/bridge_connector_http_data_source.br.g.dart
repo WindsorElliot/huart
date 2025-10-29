@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bridge_seeker_http_data_source.br.dart';
+part of 'bridge_connector_http_data_source.br.dart';
 
 // dart format off
 
@@ -10,9 +10,9 @@ part of 'bridge_seeker_http_data_source.br.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter,avoid_unused_constructor_parameters,unreachable_from_main
 
-class _BridgeSeekerHttpDataSource implements BridgeSeekerHttpDataSource {
-  _BridgeSeekerHttpDataSource(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://discovery.meethue.com';
+class _BridgeConnectorHttpDataSource implements BridgeConnectorHttpDataSource {
+  _BridgeConnectorHttpDataSource(this._dio, {this.baseUrl, this.errorLogger}) {
+    baseUrl ??= '/api';
   }
 
   final Dio _dio;
@@ -22,13 +22,15 @@ class _BridgeSeekerHttpDataSource implements BridgeSeekerHttpDataSource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<DiscoveredBridgeDto>> getDiscoveredBridges() async {
+  Future<List<ResponseBodyConnectorDto>> getBridgeCredentialsConnector(
+    RequestBodyConnectorDto requestBodyConnectorDto,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<DiscoveredBridgeDto>>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
+    final _data = requestBodyConnectorDto;
+    final _options = _setStreamType<List<ResponseBodyConnectorDto>>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '',
@@ -38,12 +40,12 @@ class _BridgeSeekerHttpDataSource implements BridgeSeekerHttpDataSource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<DiscoveredBridgeDto> _value;
+    late List<ResponseBodyConnectorDto> _value;
     try {
       _value = _result.data!
           .map(
             (dynamic i) =>
-                DiscoveredBridgeDto.fromJson(i as Map<String, dynamic>),
+                ResponseBodyConnectorDto.fromJson(i as Map<String, dynamic>),
           )
           .toList();
     } on Object catch (e, s) {
