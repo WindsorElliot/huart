@@ -1,6 +1,8 @@
-// TODO: Put public facing types in this file.
+import 'package:dio/dio.dart';
+import 'package:hue_api/hue_api.dart';
+import 'package:hue_api/src/data/data_source/seeker/bridge_seeker_http_data_source.br.dart';
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+BridgeSeekerRepository createRepository(Dio dio) {
+  final httpDataSource = BridgeSeekerHttpDataSource(dio);
+  return BridgeSeekerSingleSourceRepository(dataSource: httpDataSource);
 }
