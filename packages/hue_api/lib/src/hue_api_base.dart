@@ -10,3 +10,8 @@ BridgeConnectorRepository createBridgeConnectorRepository(Dio dio) {
   final httpDataSource = BridgeConnectorHttpDataSource(dio);
   return BridgeConnectorSingleSourceRepository(dataSource: httpDataSource);
 }
+
+DeviceRepository createDeviceRepository(Dio dio) {
+  final httpDataSource = DeviceHttpDataSource(dio);
+  return DeviceSingleSourceRepository(dataSource: httpDataSource);
+}

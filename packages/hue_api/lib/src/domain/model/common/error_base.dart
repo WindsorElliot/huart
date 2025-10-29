@@ -1,6 +1,6 @@
 class ErrorBase implements Exception {
-  final int type;
-  final String address;
+  final int? type;
+  final String? address;
   final String description;
 
   const ErrorBase({

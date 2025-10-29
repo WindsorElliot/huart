@@ -15,6 +15,9 @@ void main() {
     BaseOptions(
       baseUrl: 'https://192.168.1.17',
       contentType: ContentType.json.toString(),
+      headers: {
+        'hue-application-key': 'nBcOKIGtb0Ry4LSqGMQD7N8Mv0agJ8ZNkAyVK9pw',
+      },
     ),
   );
   dio.httpClientAdapter = IOHttpClientAdapter(
@@ -33,10 +36,13 @@ void main() {
       ),
     ),
   );
-  final bridgeRepository = createRepository(dio);
-  final bridgeConnectorRepository = createBridgeConnectorRepository(dio);
-  bridgeRepository.getDiscoveredBridge().then(print);
-  bridgeConnectorRepository
-      .getBridgeCredentials('dart#hueapi', true)
-      .then(print);
+  // final bridgeRepository = createRepository(dio);
+  // final bridgeConnectorRepository = createBridgeConnectorRepository(dio);
+  // bridgeRepository.getDiscoveredBridge().then(print);
+  // bridgeConnectorRepository
+  //     .getBridgeCredentials('dart#hueapi', true)
+  //     .then(print);
+
+  final deviceRepository = createDeviceRepository(dio);
+  deviceRepository.getDevices().then(print);
 }

@@ -7,8 +7,8 @@ part of 'error_base_dto.br.dart';
 // **************************************************************************
 
 _ErrorBase _$ErrorBaseFromJson(Map<String, dynamic> json) => _ErrorBase(
-  type: (json['type'] as num).toInt(),
-  address: json['address'] as String,
+  type: (json['type'] as num?)?.toInt(),
+  address: json['address'] as String?,
   description: json['description'] as String,
 );
 

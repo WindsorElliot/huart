@@ -22,7 +22,7 @@ ErrorBaseDto _$ErrorBaseDtoFromJson(
 /// @nodoc
 mixin _$ErrorBaseDto {
 
- int get type; String get address; String get description;
+ int? get type; String? get address; String get description;
 /// Create a copy of ErrorBaseDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -55,7 +55,7 @@ abstract mixin class $ErrorBaseDtoCopyWith<$Res>  {
   factory $ErrorBaseDtoCopyWith(ErrorBaseDto value, $Res Function(ErrorBaseDto) _then) = _$ErrorBaseDtoCopyWithImpl;
 @useResult
 $Res call({
- int type, String address, String description
+ int? type, String? address, String description
 });
 
 
@@ -72,11 +72,11 @@ class _$ErrorBaseDtoCopyWithImpl<$Res>
 
 /// Create a copy of ErrorBaseDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? type = null,Object? address = null,Object? description = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? type = freezed,Object? address = freezed,Object? description = null,}) {
   return _then(_self.copyWith(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as int,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as int?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
+as String?,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int type,  String address,  String description)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? type,  String? address,  String description)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ErrorBase() when $default != null:
 return $default(_that.type,_that.address,_that.description);case _:
@@ -183,7 +183,7 @@ return $default(_that.type,_that.address,_that.description);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int type,  String address,  String description)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? type,  String? address,  String description)  $default,) {final _that = this;
 switch (_that) {
 case _ErrorBase():
 return $default(_that.type,_that.address,_that.description);case _:
@@ -203,7 +203,7 @@ return $default(_that.type,_that.address,_that.description);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int type,  String address,  String description)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? type,  String? address,  String description)?  $default,) {final _that = this;
 switch (_that) {
 case _ErrorBase() when $default != null:
 return $default(_that.type,_that.address,_that.description);case _:
@@ -221,8 +221,8 @@ class _ErrorBase implements ErrorBaseDto {
   const _ErrorBase({required this.type, required this.address, required this.description});
   factory _ErrorBase.fromJson(Map<String, dynamic> json) => _$ErrorBaseFromJson(json);
 
-@override final  int type;
-@override final  String address;
+@override final  int? type;
+@override final  String? address;
 @override final  String description;
 
 /// Create a copy of ErrorBaseDto
@@ -258,7 +258,7 @@ abstract mixin class _$ErrorBaseCopyWith<$Res> implements $ErrorBaseDtoCopyWith<
   factory _$ErrorBaseCopyWith(_ErrorBase value, $Res Function(_ErrorBase) _then) = __$ErrorBaseCopyWithImpl;
 @override @useResult
 $Res call({
- int type, String address, String description
+ int? type, String? address, String description
 });
 
 
@@ -275,11 +275,11 @@ class __$ErrorBaseCopyWithImpl<$Res>
 
 /// Create a copy of ErrorBaseDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? type = null,Object? address = null,Object? description = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? type = freezed,Object? address = freezed,Object? description = null,}) {
   return _then(_ErrorBase(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as int,address: null == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
-as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as int?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
+as String?,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
